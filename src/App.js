@@ -10,22 +10,25 @@ import SearchItem from './components/SearchItem';
 import SortItems from './components/SortItems';
 import LowStockItems from './components/LowStockItems';
 import { InventoryProvider } from './components/Inventory';
+import './App.css';
 
 const App = () => {
   return (
     <InventoryProvider>
       <Router>
         <div className="container">
-          <h1 className="my-4">Inventory Management System</h1>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <NavLink to="/add" className="btn btn-primary mx-1">Add Item</NavLink>
-            <NavLink to="/update" className="btn btn-secondary mx-1">Update Item</NavLink>
-            <NavLink to="/remove" className="btn btn-danger mx-1">Remove Item</NavLink>
-            <NavLink to="/displayCat" className="btn btn-info mx-1">Display By Category</NavLink>
-            <NavLink to="/display" className="btn btn-warning mx-1">Display All Items</NavLink>
-            <NavLink to="/search" className="btn btn-success mx-1">Search Item</NavLink>
-            <NavLink to="/sort" className="btn btn-dark mx-1">Sort Items</NavLink>
-            <NavLink to="/low-stock" className="btn btn-light mx-1">Low Stock Items</NavLink>
+          <h1 className="my-4 text-center">Inventory Management System</h1>
+          <nav className="navbar p-4 navbar-expand-lg">
+            <div className="d-flex flex-wrap w-100">
+              <NavLink to="/add" className="btn btn-primary mx-1 flex-fill">Add Item</NavLink>
+              <NavLink to="/update" className="btn btn-secondary mx-1 flex-fill">Update Item</NavLink>
+              <NavLink to="/remove" className="btn btn-danger mx-1 flex-fill">Remove Item</NavLink>
+              <NavLink to="/displayCat" className="btn btn-info mx-1 flex-fill">Display By Category</NavLink>
+              <NavLink to="/display" className="btn btn-warning mx-1 flex-fill">Display All Items</NavLink>
+              <NavLink to="/search" className="btn btn-success mx-1 flex-fill">Search Item</NavLink>
+              <NavLink to="/sort" className="btn btn-dark mx-1 flex-fill">Sort Items</NavLink>
+              <NavLink to="/low-stock" className="btn btn-light mx-1 flex-fill">Low Stock Items</NavLink>
+            </div>
           </nav>
           
           <Routes>

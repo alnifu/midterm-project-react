@@ -22,9 +22,12 @@ const RemoveItem = () => {
   return (
     <div className="container">
       <h2>Remove Item</h2>
-      <input type="text" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
-      <button className="btn btn-danger" onClick={handleRemoveItem}>Remove Item</button>
-      {message && <p>{message}</p>}
+      <div className="form-group">
+        <label htmlFor="id">ID</label>
+        <input type="text" id="id" className="form-control" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
+      </div>
+      <button className="btn btn-danger mt-3" onClick={handleRemoveItem}>Remove Item</button>
+      {message && <p className="mt-3">{message}</p>}
     </div>
   );
 };

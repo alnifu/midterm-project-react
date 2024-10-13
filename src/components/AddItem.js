@@ -38,17 +38,32 @@ const AddItem = () => {
   return (
     <div className="container">
       <h2>Add Item</h2>
-      <input type="text" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
-      <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <input type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
-      <input type="number" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="Clothing">Clothing</option>
-        <option value="Electronics">Electronics</option>
-        <option value="Entertainment">Entertainment</option>
-      </select>
-      <button className="btn btn-primary" onClick={handleAddItem}>Add Item</button>
-      {message && <p>{message}</p>}
+      <div className="form-group">
+        <label htmlFor="id">ID</label>
+        <input type="text" id="id" className="form-control" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="name">Name</label>
+        <input type="text" id="name" className="form-control" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="quantity">Quantity</label>
+        <input type="number" id="quantity" className="form-control" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="price">Price</label>
+        <input type="number" id="price" className="form-control" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="category">Category</label>
+        <select id="category" className="form-control" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="Clothing">Clothing</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Entertainment">Entertainment</option>
+        </select>
+      </div>
+      <button className="btn btn-primary mt-3" onClick={handleAddItem}>Add Item</button>
+      {message && <p className="mt-3">{message}</p>}
     </div>
   );
 };

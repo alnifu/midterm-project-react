@@ -10,11 +10,14 @@ const DisplayItemsByCategory = () => {
   return (
     <div className="container">
       <h2>Display Items by Category</h2>
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+      <div className="form-group">
+        <label htmlFor="category">Category</label>
+        <select id="category" className="form-control w-25" value={category} onChange={(e) => setCategory(e.target.value)}>
         <option value="Clothing">Clothing</option>
         <option value="Electronics">Electronics</option>
         <option value="Entertainment">Entertainment</option>
       </select>
+      </div>
 
       {filteredItems.length > 0 ? (
         <table className="table table-striped">

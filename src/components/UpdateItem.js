@@ -30,16 +30,25 @@ const UpdateItem = () => {
 
   return (
     <div className="container">
-      <h2>Update Item</h2>
-      <input type="text" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
-      <select value={field} onChange={(e) => setField(e.target.value)}>
+    <h2>Update Item</h2>
+    <div className="form-group">
+      <label htmlFor="id">ID</label>
+      <input type="text" id="id" className="form-control" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
+    </div>
+    <div className="form-group">
+      <label htmlFor="field">Field</label>
+      <select id="field" className="form-control" value={field} onChange={(e) => setField(e.target.value)}>
         <option value="quantity">Quantity</option>
         <option value="price">Price</option>
       </select>
-      <input type="number" placeholder="New Value" value={newValue} onChange={(e) => setNewValue(e.target.value)} />
-      <button className="btn btn-primary" onClick={handleUpdateItem}>Update Item</button>
-      {message && <p>{message}</p>}
     </div>
+    <div className="form-group">
+      <label htmlFor="newValue">New Value</label>
+      <input type="number" id="newValue" className="form-control" placeholder="New Value" value={newValue} onChange={(e) => setNewValue(e.target.value)} />
+    </div>
+    <button className="btn btn-secondary mt-3" onClick={handleUpdateItem}>Update Item</button>
+    {message && <p className="mt-3">{message}</p>}
+  </div>
   );
 };
 

@@ -20,14 +20,21 @@ const SortItems = () => {
   return (
     <div className="container">
       <h2>Sort Items</h2>
-      <select value={sortField} onChange={(e) => setSortField(e.target.value)}>
-        <option value="quantity">Quantity</option>
-        <option value="price">Price</option>
-      </select>
-      <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-        <option value="ascending">Ascending</option>
-        <option value="descending">Descending</option>
-      </select>
+<div className="form-group row">
+  <div className="col-md-6">
+    <select className="form-control" value={sortField} onChange={(e) => setSortField(e.target.value)}>
+      <option value="quantity">Quantity</option>
+      <option value="price">Price</option>
+    </select>
+  </div>
+  <div className="col-md-6">
+    <select className="form-control" value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+      <option value="ascending">Ascending</option>
+      <option value="descending">Descending</option>
+    </select>
+  </div>
+</div>
+
 
       {sortedItems.length > 0 ? (
         <table className="table table-striped">

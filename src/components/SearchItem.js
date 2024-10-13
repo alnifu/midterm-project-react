@@ -21,17 +21,20 @@ const SearchItem = () => {
   return (
     <div className="container">
       <h2>Search Item</h2>
-      <input type="text" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
-      <button className="btn btn-primary" onClick={handleSearchItem}>Search</button>
-      {message && <p>{message}</p>}
+      <div className="form-group">
+        <label htmlFor="id">ID</label>
+        <input type="text" id="id" className="form-control" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
+      </div>
+      <button className="btn btn-success mt-3" onClick={handleSearchItem}>Search</button>
+      {message && <p className="mt-3">{message}</p>}
       {foundItem && (
-        <div>
+        <div className="mt-3">
           <h3>Item Details</h3>
-          <p>ID: {foundItem.id}</p>
-          <p>Name: {foundItem.name}</p>
-          <p>Quantity: {foundItem.quantity}</p>
-          <p>Price: {foundItem.price}</p>
-          <p>Category: {foundItem.category}</p>
+          <p><strong>ID:</strong> {foundItem.id}</p>
+          <p><strong>Name:</strong> {foundItem.name}</p>
+          <p><strong>Quantity:</strong> {foundItem.quantity}</p>
+          <p><strong>Price:</strong> {foundItem.price}</p>
+          <p><strong>Category:</strong> {foundItem.category}</p>
         </div>
       )}
     </div>
